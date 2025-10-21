@@ -1,0 +1,33 @@
+.about-container {
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.about-heading {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.about-text {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.continue-button {
+  background-color: #43a047;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.continue-button:hover {
+  background-color: #2e7d32;
+}

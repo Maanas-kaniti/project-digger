@@ -1,0 +1,93 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px 20px;
+  background-color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  /* min-height: 100vh; */
+  box-sizing: border-box;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.navbar-logo {
+  height: 24px;
+  margin-right: 6px;
+}
+
+.navbar-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #222;
+}
+
+.form-heading {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 6px;
+  color: #111;
+}
+
+.divider {
+  width: 90%;
+  height: 1px;
+  background-color: #000;
+  margin-bottom: 20px;
+}
+
+.form-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 350px;
+  gap: 15px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+input {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.2s;
+}
+
+input:focus {
+  border-color: #303f9f;
+}
+
+button {
+  background-color: #303f9f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+  background-color: #283593;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

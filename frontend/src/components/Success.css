@@ -1,0 +1,86 @@
+.success-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 30px;
+  height: 83vh;
+  background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+  text-align: center;
+}
+
+.success-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  padding: 40px 60px;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.check-icon {
+  animation: pop 0.8s ease forwards;
+  margin-bottom: 20px;
+}
+
+.icon {
+  color: #2ecc71;
+  width: 80px;
+  height: 80px;
+}
+
+h1 {
+  font-size: 28px;
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #4f4f4f;
+  font-size: 16px;
+  margin-bottom: 30px;
+  max-width: 300px;
+}
+
+button {
+  background-color: #43a047;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #388e3c;
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
