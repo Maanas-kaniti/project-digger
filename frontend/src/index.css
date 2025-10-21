@@ -9,3 +9,44 @@
     display: block;
   }
 }
+/* Base style for all screens */
+#desktop-warning {
+  display: none;
+}
+
+/* Show the warning on screens wider than 768px */
+@media (min-width: 769px) {
+  body > *:not(#desktop-warning) {
+    display: none !important;
+  }
+
+  #desktop-warning {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff5f6d, #ffc371);
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.4rem;
+    padding: 20px;
+  }
+
+  #desktop-warning h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  #desktop-warning p {
+    max-width: 400px;
+    line-height: 1.5;
+  }
+
+  #desktop-warning img {
+    width: 120px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+}
