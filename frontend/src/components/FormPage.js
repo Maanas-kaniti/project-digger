@@ -21,10 +21,13 @@ function FormPage() {
 
     setIsSubmitting(true);
     try {
-      const res = await axios.post("http://localhost:5000/submit", {
-        ...formData,
-        domain,
-      });
+      const res = await axios.post(
+        "https://project-digger.onrender.com/submit",
+        {
+          ...formData,
+          domain,
+        }
+      );
       if (res.status === 200) {
         navigate("/success"); // smooth client-side routing
       } else {
