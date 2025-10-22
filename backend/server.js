@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-app.post(`${process.env.REACT_APP_API_URL}/submit`, async (req, res) => {
+app.post("/submit", async (req, res) => {
   const { name, email, phone, domain } = req.body;
 
   if (!name || !email || !phone) {
