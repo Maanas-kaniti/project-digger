@@ -2,67 +2,76 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Mobile Only Website</title>
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
 
-    <style>
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-      }
-
-      #desktop-warning {
-        display: none;
-      }
-
-      @media (min-width: 769px) {
-        #desktop-warning {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          flex-direction: column;
-          height: 100vh;
-          background: linear-gradient(135deg, #ff5f6d, #ffc371);
-          color: white;
-          font-family: "Poppins", sans-serif;
-        }
-
-        #desktop-warning img {
-          width: 100px;
-          margin-bottom: 20px;
-        }
-
-        #root {
-          display: none;
-        }
-      }
-    </style>
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
   </head>
-
   <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
     <div id="desktop-warning">
       <img
         src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png"
-        alt="Mobile Only"
+        alt="mobile icon"
       />
       <h1>Mobile View Only</h1>
       <p>
-        This site works only on mobile devices. Please open it on your phone.
+        This website is optimized for mobile devices. Please open it on your
+        phone for the best experience.
       </p>
     </div>
-
-    <div id="root"></div>
-
     <script>
-      // 🚫 Don’t even load React on desktop
-      if (window.innerWidth < 769) {
-        const script = document.createElement("script");
-        script.src = "/static/js/bundle.js";
-        document.body.appendChild(script);
-      }
+      const checkScreen = () => {
+        const warning = document.getElementById("desktop-warning");
+        if (window.innerWidth > 768) {
+          warning.style.display = "flex";
+          document.body
+            .querySelectorAll(":not(#desktop-warning)")
+            .forEach((el) => {
+              if (el !== warning) el.style.display = "none";
+            });
+        } else {
+          warning.style.display = "none";
+          document.body
+            .querySelectorAll(":not(#desktop-warning)")
+            .forEach((el) => {
+              if (el !== warning) el.style.display = "";
+            });
+        }
+      };
+      window.addEventListener("resize", checkScreen);
+      window.addEventListener("load", checkScreen);
     </script>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
   </body>
 </html>
