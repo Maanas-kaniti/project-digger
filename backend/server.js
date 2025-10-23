@@ -44,7 +44,7 @@ app.post("/submit", async (req, res) => {
     // Auto-reply to User
     const userMsg = {
       to: email,
-      from: process.env.SENDER_EMAIL,
+      from: "From Project Digger Team" + `<noreply@pro-digger.com>`,
       subject: "We’ve received your submission",
       html: `
         <p>Hi ${name},</p>
