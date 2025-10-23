@@ -1,8 +1,8 @@
 import nodemailer from "nodemailer";
 // alsn eotc myxl qybl
 // jdpl yebm zidh iugw
-const candidateName = "Chellannagari Bhuvana";
-const candidateEmail = "bhuvanach07@gmail.com"; // Replace with the candidate's email
+const candidateName = "Jakkula Isha Mudhiraj";
+const candidateEmail = "ishamudhiraj06@gmail.com"; // Replace with the candidate's email
 const assessmentLink = "https://maanas-kaniti.github.io/new-/";
 async function sendTestMail() {
   const transporter = nodemailer.createTransport({

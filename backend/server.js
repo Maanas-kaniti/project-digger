@@ -1,10 +1,9 @@
 import express from "express";
 import cors from "cors";
-import nodemailer from "nodemailer";
 import dotenv from "dotenv";
+import sgMail from "@sendgrid/mail";
 import path from "path";
 import { fileURLToPath } from "url";
-import { dirname } from "path";
 
 dotenv.config();
 
@@ -17,6 +16,9 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+// Configure SendGrid API Key
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+
 app.post("/submit", async (req, res) => {
   const { name, email, phone, domain } = req.body;
 
@@ -25,19 +27,10 @@ app.post("/submit", async (req, res) => {
   }
 
   try {
-    // Create transporter with environment variables
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.ADMIN_EMAIL,
-        pass: process.env.EMAIL_PASSWORD,
-      },
-    });
-
     // Email to Admin
-    const adminMail = {
-      from: email,
-      to: process.env.ADMIN_EMAIL,
+    const adminMsg = {
+      to: process.env.ADMIN_EMAIL, // Your admin email
+      from: process.env.SENDER_EMAIL, // Verified sender in SendGrid
       subject: "New Form Submission",
       html: `
         <h2>New Submission</h2>
@@ -48,10 +41,10 @@ app.post("/submit", async (req, res) => {
       `,
     };
 
-    // Auto-reply to user
-    const userMail = {
-      from: '"No Reply" <noreply@pro-digger.com>',
+    // Auto-reply to User
+    const userMsg = {
       to: email,
+      from: process.env.SENDER_EMAIL,
       subject: "We’ve received your submission",
       html: `
         <p>Hi ${name},</p>
@@ -60,10 +53,10 @@ app.post("/submit", async (req, res) => {
       `,
     };
 
-    console.log("Attempting to send emails...");
+    console.log("Attempting to send emails via SendGrid...");
 
-    await transporter.sendMail(adminMail);
-    await transporter.sendMail(userMail);
+    await sgMail.send(adminMsg);
+    await sgMail.send(userMsg);
 
     console.log("Emails sent successfully!");
     res.status(200).json({ success: true });
@@ -72,11 +65,14 @@ app.post("/submit", async (req, res) => {
     res.status(500).json({ error: "Failed to send email" });
   }
 });
+
+// Serve frontend build (React)
 app.use(express.static(path.join(__dirname, "../frontend/build")));
 
 app.get(/.*/, (req, res) => {
   res.sendFile(path.resolve(__dirname, "../frontend", "build", "index.html"));
 });
+
 app.listen(PORT, "0.0.0.0", () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
