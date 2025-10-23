@@ -31,7 +31,7 @@ app.post("/submit", async (req, res) => {
     const adminMsg = {
       to: process.env.ADMIN_EMAIL, // Your admin email
       from: process.env.SENDER_EMAIL, // Verified sender in SendGrid
-      subject: "New Form Submission",
+      subject: `New Form Submission from ${name}`,
       html: `
         <h2>New Submission</h2>
         <p><strong>Domain:</strong> ${domain}</p>
@@ -49,7 +49,7 @@ app.post("/submit", async (req, res) => {
       html: `
         <p>Hi ${name},</p>
         <p>Thank you for submitting your details. Please wait for 24 hours — our team will get back to you soon.</p>
-        <p>Regards,<br>Namma Yatri Campus Hiring Team</p>
+        <p>Regards,<br>Project-Digger Team</p>
       `,
     };
 
