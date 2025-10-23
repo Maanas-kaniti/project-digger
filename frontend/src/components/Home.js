@@ -8,7 +8,7 @@ function Home() {
       style={{ textAlign: "center", padding: "" }}
       className="home-container"
     >
-      <h1 className="home-title">Welcome to Namma Yatri Assessment</h1>
+      <h1 className="home-title">Welcome to Project Digger</h1>
       <button onClick={() => navigate("/about")} className="home-button">
         Start
       </button>

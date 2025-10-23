@@ -10,13 +10,16 @@ function About() {
     >
       <h2 className="about-heading">About Us</h2>
       <p className="about-text">
-        Welcome to <strong>Namma Yatri Campus Hiring</strong>. We’re a team
-        dedicated to providing students with career opportunities and technical
-        assessments that help them grow into skilled professionals.
+        Welcome to <strong>Project-digger</strong>. We’re a team Lorem ipsum
+        dolor sit amet consectetur adipisicing elit. Dolorem aliquid fuga animi
+        corporis eaque maiores, dignissimos harum at fugit maxime! Fuga
+        blanditiis sunt vero nostrum ipsa illum omnis at consequatur?
       </p>
       <p className="about-text">
-        Our mission is to connect passionate learners with innovative companies
-        and help bridge the gap between academics and real-world experience.
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium
+        repellat libero earum odit saepe, suscipit, corporis nulla, vel deleniti
+        odio rerum ad quidem nihil minima dolore! Necessitatibus, ab. Adipisci,
+        animi?
       </p>
       <button onClick={() => navigate("/domains")} className="continue-button">
         Continue
