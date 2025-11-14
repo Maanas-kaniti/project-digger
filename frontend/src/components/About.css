@@ -1,8 +1,13 @@
 .about-container {
-  padding: 40px 20px;
-  text-align: center;
+  padding: 30px 20px;
   min-height: calc(100vh - 60px);
   background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.about-section {
+  margin-bottom: 40px;
 }
 
 .about-heading {
@@ -10,21 +15,74 @@
   font-weight: 700;
   margin-bottom: 20px;
   color: #1a1a1a;
+  text-align: center;
+}
+
+.about-subheading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+  text-align: center;
 }
 
 .about-text {
   color: #6c757d;
   font-size: 1rem;
   line-height: 1.8;
-  margin-bottom: 30px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-bottom: 20px;
+  text-align: left;
 }
 
 .about-text strong {
   color: #667eea;
   font-weight: 700;
+}
+
+.about-conclusion {
+  text-align: center;
+  font-style: italic;
+  color: #495057;
+  margin-top: 10px;
+}
+
+.about-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.about-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: white;
+  padding: 16px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-left: 3px solid #667eea;
+  transition: all 0.3s ease;
+}
+
+.about-list-item:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.about-list-item span:last-child {
+  color: #495057;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.about-checkmark {
+  color: #10b981;
+  font-size: 1.2rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
 }
 
 .continue-button {
@@ -38,6 +96,10 @@
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  display: block;
+  margin: 40px auto 20px;
+  width: 100%;
+  max-width: 300px;
 }
 
 .continue-button:hover {
