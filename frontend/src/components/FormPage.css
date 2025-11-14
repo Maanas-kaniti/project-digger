@@ -2,10 +2,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 25px 20px;
-  background-color: #ffffff;
-  font-family: "Poppins", sans-serif;
-  /* min-height: 100vh; */
+  padding: 30px 20px;
+  min-height: calc(100vh - 60px);
+  background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
   box-sizing: border-box;
 }
 
@@ -29,65 +28,84 @@
 }
 
 .form-heading {
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 24px;
+  font-weight: 700;
   text-align: center;
-  margin-bottom: 6px;
-  color: #111;
+  margin-bottom: 10px;
+  color: #1a1a1a;
 }
 
 .divider {
   width: 90%;
-  height: 1px;
-  background-color: #000;
-  margin-bottom: 20px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #dee2e6, transparent);
+  margin-bottom: 30px;
 }
 
 .form-content {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 350px;
-  gap: 15px;
+  max-width: 400px;
+  gap: 20px;
+  background: white;
+  padding: 30px 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 label {
   font-size: 14px;
-  font-weight: 500;
-  color: #333;
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 6px;
 }
 
 input {
-  padding: 10px 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 14px;
+  padding: 12px 16px;
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  font-size: 15px;
   outline: none;
-  transition: border 0.2s;
+  transition: all 0.2s ease;
+  background-color: #ffffff;
+  color: #212529;
 }
 
 input:focus {
-  border-color: #303f9f;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+input::placeholder {
+  color: #adb5bd;
 }
 
 button {
-  background-color: #303f9f;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   border: none;
-  border-radius: 8px;
-  padding: 12px;
+  border-radius: 12px;
+  padding: 14px;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   margin-top: 10px;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
 }
 
 button:hover:not(:disabled) {
-  background-color: #283593;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(0);
 }
 
 button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+  transform: none;
 }

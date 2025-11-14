@@ -1,33 +1,50 @@
 .about-container {
-  padding: 30px 20px;
+  padding: 40px 20px;
   text-align: center;
+  min-height: calc(100vh - 60px);
+  background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
 }
 
 .about-heading {
-  font-size: 1.6rem;
-  font-weight: 600;
-  margin-bottom: 15px;
-  color: #222;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #1a1a1a;
 }
 
 .about-text {
-  color: #555;
+  color: #6c757d;
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.8;
   margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-text strong {
+  color: #667eea;
+  font-weight: 700;
 }
 
 .continue-button {
-  background-color: #43a047;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
-  padding: 10px 20px;
+  padding: 14px 32px;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
 }
 
 .continue-button:hover {
-  background-color: #2e7d32;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.continue-button:active {
+  transform: translateY(0);
 }
